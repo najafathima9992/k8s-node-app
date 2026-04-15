@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h1>K8sApp</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>🚀 Kubernetes Deployment Successful</h2>
+        <p>Your application is running inside Kubernetes cluster.</p>
+        <button onclick="loadMessage()">Check Status</button>
+    </section>
+
+    <section class="card-container">
+        <div class="card">
+            <h3>Scalable</h3>
+            <p>Automatically scales based on traffic.</p>
+        </div>
+        <div class="card">
+            <h3>Reliable</h3>
+            <p>Self-healing pods ensure uptime.</p>
+        </div>
+        <div class="card">
+            <h3>Fast</h3>
+            <p>Optimized for performance and speed.</p>
+        </div>
+    </section>
+
+    <section class="response">
+        <h3>Server Response:</h3>
+        <p id="output">Click button to fetch response...</p>
+    </section>
+
+    <footer>
+        <p>© 2026 Kubernetes Project | DevOps Portfolio</p>
+    </footer>
+
+    <script>
+        function loadMessage() {
+            fetch('/api')
+                .then(res => res.text())
+                .then(data => {
+                    document.getElementById('output').innerText = data;
+                });
+        }
+    </script>
+
+</body>
+</html>
